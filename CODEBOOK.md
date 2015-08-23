@@ -1,3 +1,10 @@
+---
+title: "Codebook"
+author: "DianaSP"
+date: "23 de agosto de 2015"
+output: html_document
+---
+
 CODEBOOK.md
 Diana SP
 
@@ -12,15 +19,15 @@ Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
-These time domain signals (prefix ‘t’ to denote time) were captured at a constant rate of 50 Hz. and the acceleration signal was then separated into body and gravity acceleration signals 
-(tBodyAcc-XYZ and tGravityAcc-XYZ) – both using a low pass Butterworth filter.
+These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. and the acceleration signal was then separated into body and gravity acceleration signals 
+(tBodyAcc-XYZ and tGravityAcc-XYZ) - both using a low pass Butterworth filter.
 
 The body linear acceleration and angular velocity were derived in time to obtain Jerk signals 
 (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean 
 norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
 
 A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. 
-(Note the ‘f’ to indicate frequency domain signals).
+(Note the 'f' to indicate frequency domain signals).
 
 Description of abbreviations of measurements
 
@@ -31,12 +38,12 @@ Acc = accelerometer measurement
 Gyro = gyroscopic measurements
 Jerk = sudden movement acceleration
 Mag = magnitude of movement
-mean and SD are calculated for each subject for each activity for each mean and SD measurements.
 
-The units given are g’s for the accelerometer and rad/sec for the gyro and g/sec and rad/sec/sec for the corresponding jerks.
+mean and SD are calculated for each subject for each activity for each mean and SD measurements.
+The units given are g's for the accelerometer and rad/sec for the gyro and g/sec and rad/sec/sec for the corresponding jerks.
 
 These signals were used to estimate variables of the feature vector for each pattern:
-‘-XYZ’ is used to denote 3-axial signals in the X, Y and Z directions. They total 33 measurements including the 3 dimensions - the X,Y, and Z axes.
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions. They total 33 measurements including the 3 dimensions - the X,Y, and Z axes.
 
 tBodyAcc-XYZ
 tGravityAcc-XYZ
@@ -59,7 +66,6 @@ The set of variables that were estimated from these signals are:
 
 mean(): Mean value
 std(): Standard deviation
-
 Data Set Information:
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
 Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
@@ -78,10 +84,9 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
-
-
+```{r}
 library(curl)
 #Download the Data
 filesPath <- "E:/7 ESPECIALIZACION/3 Curso Getting and Cleaning Data/3 Week 3/Proyecto/UCI HAR Dataset"
@@ -195,5 +200,12 @@ f <- file(f.nm, open="w") # or open="a" if appending
 write.table(dataTable, file = f, sep = ",", append=FALSE, row.names = FALSE, col.names=TRUE)
 
 close(f)
+```
+
+
+
+
+
+
 
 
